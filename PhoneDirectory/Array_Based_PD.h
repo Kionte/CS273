@@ -53,6 +53,7 @@ public:
 	void save();
 
 private:
+	// Kionte
 	class Directory_Entry
 
 	{
