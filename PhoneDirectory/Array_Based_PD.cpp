@@ -55,6 +55,7 @@ void Phone_Directory::load_data(const string& source_name)
 	@param number The new number to be assigned
 	@return The old number or, if a new entry, an empty string
 	*/
+
 string Phone_Directory::add_or_change_entry(const string& name,
 	const string& number)
 {
