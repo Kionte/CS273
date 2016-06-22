@@ -30,7 +30,7 @@ private:
 	std::vector<int> find_accounts_by_name(std::string name)
 	{
 		std::vector<int> user_accounts;
-		// FIXME: Find all the accounts belonging to a customer name and add it to the vector of account numbers.
+		// Find all the accounts belonging to a customer name and add it to the vector of account numbers.
 		for (int i = 0; i < accounts.size(); i++) {
 			if (accounts[i]->get_customer()->getName() == name)
 				user_accounts.push_back(accounts[i]->get_account());
@@ -50,7 +50,7 @@ private:
 			if (customers[i]->getName() == name)
 				return customers[i];
 		}
-		// FIXME: Find and return the Customer object with the parameter name
+		// Find and return the Customer object with the parameter name
 		return NULL;
 	}
 
@@ -72,7 +72,7 @@ private:
 			acct = new Checking_Account(cust, account_id, 0);
 		else
 			std::cout << "not valid account type\n";
-		// FIXME: Factory method for creating a Account object (could be a Saving_Account or a Checking_Account).
+		// Factory method for creating a Account object (could be a Saving_Account or a Checking_Account).
 		accounts.push_back(acct);
 		return acct;
 	}
@@ -109,7 +109,7 @@ public:
 	@return the newly created account object
 	*/
 	Account* add_account(std::string name, std::string address, std::string telephone, int age, std::string cust_type, std::string account_type)
-		// FIXME: Depending on the customer type, we want to create an Adult, Senior, or Student object.
+		// Depending on the customer type, we want to create an Adult, Senior, or Student object.
 	{
 		Customer *cust;
 		if (cust_type == "adult") 
@@ -135,7 +135,9 @@ public:
 		{
 			Account *acct = get_account(acct_number);
 			if (acct) {
-				// FIXME: Deposit the amt in the account
+				// Deposit the amt in the account
+				// acct->deposit(amt);
+
 			}
 		}
 
@@ -148,7 +150,8 @@ public:
 		{
 			Account *acct = get_account(acct_number);
 			if (acct) {
-				// FIXME: Withdraw the amt from the account
+				// Withdraw the amt from the account
+				// acct->withdraw(amt);
 			}
 		}
 
@@ -171,7 +174,7 @@ public:
 		{
 			for (size_t i = 0; i < accounts.size(); i++) {
 				if (accounts[i]->get_account() == acct_number)
-					return accounts[i];
+					return accounts[i]; 
 			}
 			return NULL;
 		}

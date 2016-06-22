@@ -49,8 +49,8 @@ protected:
 		std::string fees = get_fees();
 		Transaction *tran = NULL;
 
-		// FIXME: Create a Transaction object and assign it to the transaction vector.
-
+		// Create a Transaction object and assign it to the transaction vector.
+		tran = new Transaction(account_number, " Add interest ", amt, fees);
 		transactions.push_back(tran);
 	}
 
@@ -100,10 +100,13 @@ public:
 	virtual std::string to_string() {
 		std::stringstream ss; // for composing the string that describes this account
 
-		// FIXME: Add information about the customer who owns this account.
+		// Add information about the customer who owns this account.
 		
 		ss << "  Balance: " << balance << std::endl;
 		ss << "  Account ID: " << account_number << std::endl;
+		//for (int i = 0; i < transactions.size(); i++) {
+		//	ss << "  " << i + 1 << ":" << transactions[i]->process_tran() << std::endl;
+		//}
 		return ss.str();
 	}
 
@@ -116,8 +119,8 @@ public:
 		std::string fees = get_fees();
 		Transaction *tran = NULL;
 
-		// FIXME: Create a Transaction object and assign it to transaction vector.
-
+		// Create a Transaction object and assign it to transaction vector.
+		tran = new Transaction(account_number, "Deposit", amt, fees);
 		transactions.push_back(tran);
 	}
 
@@ -126,12 +129,15 @@ public:
 	@param amt The withdrawal amount
 	*/
 	virtual void withdraw(double amt) {
+		std::cout << "PL\n";
 		balance -= amt;
 		std::string fees = get_fees();
+		//std::cout << "SRGpoiupoiupoiu\n";
 		Transaction *tran = NULL;
+		
 
-		// FIXME: Create a Transaction object and assign it to tran.
-
+		// Create a Transaction object and assign it to tran.
+		tran = new Transaction(account_number,"withdraw",amt,fees);
 		transactions.push_back(tran);
 	}
 
@@ -145,6 +151,7 @@ public:
 	void add_interest() {
 
 	}
+	
 };
 class Savings_Account : public Account{
 public:

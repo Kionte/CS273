@@ -10,7 +10,7 @@ as well as its own checking and overdraft fees.
 
 @author: Ed Walker
 */
-class Customer // FIXME: Complete the implementation!
+class Customer // Complete the implementation!
 {
 protected:
 	int age;
@@ -43,6 +43,12 @@ public:
 	std::string getTelephone(){
 			return telephone;
 	}
+	std::string getCusType() {
+		return cust_type;
+	}
+	std::string getAccountType() {
+		return account_type;
+	}
 	void setAge(int age) {
 		this->age = age;
 	}
@@ -68,22 +74,27 @@ public:
 	Adult(int age, std::string name, std::string address, std::string telephone, std::string cust_type, std::string account_type) : Customer(age, name, address, telephone, cust_type, account_type) {}
 	double checking_interest_rates() {
 		double rate;
+		rate = .25;
 		return rate;
 	}
 	double savings_interest_rates() {
 		double rate;
+		rate = .25;
 		return rate;
 	}
-	virtual double overdraft_fees() {
+	double overdraft_fees() {
 		double rate;
+		rate = 5;
 		return rate;
 	}
-	virtual double check_charge() {
+	double check_charge() {
 		double rate;
+		rate = 5;
 		return rate;
 	}
-	virtual double overdraft_penalty() {
+	double overdraft_penalty() {
 		double rate;
+		rate = 5;
 		return rate;
 	}
 };
@@ -93,22 +104,27 @@ public:
 	Senior(int age, std::string name, std::string address, std::string telephone, std::string cust_type, std::string account_type) : Customer(age, name, address, telephone, cust_type, account_type) {}
 	double checking_interest_rates() {
 		double rate;
+		rate = .5;
 		return rate;
 	}
 	double savings_interest_rates() {
 		double rate;
+		rate = .5;
 		return rate;
 	}
-	virtual double overdraft_fees() {
+	double overdraft_fees() {
 		double rate;
+		rate = 5;
 		return rate;
 	}
-	virtual double check_charge() {
+	double check_charge() {
 		double rate;
+		rate = 10;
 		return rate;
 	}
-	virtual double overdraft_penalty() {
+	double overdraft_penalty() {
 		double rate;
+		rate = 10;
 		return rate;
 	}
 };
@@ -118,22 +134,27 @@ public:
 	Student(int age, std::string name, std::string address, std::string telephone, std::string cust_type, std::string account_type) : Customer(age, name, address, telephone, cust_type, account_type) {}
 	double checking_interest_rates() {
 		double rate;
+		rate = 1;
 		return rate;
 	}
 	double savings_interest_rates() {
 		double rate;
+		rate = 1;
 		return rate;
 	}
-	virtual double overdraft_fees() {
+	double overdraft_fees() {
 		double rate;
+		rate = 5;
 		return rate;
 	}
-	virtual double check_charge() {
+	double check_charge() {
 		double rate;
+		rate = 15;
 		return rate;
 	}
-	virtual double overdraft_penalty() {
+	 double overdraft_penalty() {
 		double rate;
+		rate = 15;
 		return rate;
 	}
 };
