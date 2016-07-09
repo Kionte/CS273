@@ -59,10 +59,9 @@ public:
 
 		// the gate is empty - ready to serve!
 		if (the_queue.empty()) { // if the service queue is empty
-
 			// move a plane from the landing queue to the service queue
 			if (!landing_queue->the_queue.empty()) { // if the landing queue is not empty (it has objects inside of it)
-
+			
 				Plane *plane = landing_queue->the_queue.front(); // creating a pointer that points the front of the landing_queue' queue
 				landing_queue->the_queue.pop(); // remove a plane from the landing queue 
 
@@ -85,15 +84,18 @@ public:
 				you determine a random number within the range of service times.
 				*/
 				// create rand numbur 
-				double num; // var to store random service time
+				double num = 0; // var to store random service time
 				do { // find a value that is less than max and greater than min 
-					num = my_random.next_int(max_service_time);
+					num = (my_random.next_int(max_service_time)); // my_random.next_int(max_service_time);
 				} while (!(num < min_service_time));
 
 				plane->service_time = num; // set service time to the the amount of time the plane will take to be serviced it will be a random time 
+				// ~FIXME: add the plane to the service queue
+				the_queue.push(plane);
 			}
-			// FIXME: add the plane to the service queue
-		//	the_queue.push(landing_queue->the_queue.front); // change this it is wrong ???
+			
+			
+			
 
 		}
 	}

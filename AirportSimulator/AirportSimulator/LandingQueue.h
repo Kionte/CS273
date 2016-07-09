@@ -44,7 +44,7 @@ public:
 			//if arrival rate is .50 there is a 50 percent chance that random num will be less than 50 1-49.
 			//which means that 1 out of two will passengers will board per minute same goes for if it was
 			//.20 thre is a 20 percent chance the passanger will arrive in any minute 
-			the_queue.push(&Plane(clock)); // the_queue is a queue of plane objects pointers when the rand number 
+			the_queue.push( new Plane(clock)); // the_queue is a queue of plane objects pointers when the rand number 
 			//is less that arrival rate that means that a plane has arrived. so you add (push) a new plane object 
 			//to the queue with a ampersand becasue its a queue of pointers so you need to give the queue a address to not just the variable. 
 
