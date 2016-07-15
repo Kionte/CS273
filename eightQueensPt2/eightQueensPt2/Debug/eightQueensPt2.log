@@ -1,0 +1,17 @@
+﻿Build started 7/14/2016 8:10:11 PM.
+     1>Project "C:\Users\kbrown17\Desktop\EightQueensPt2\eightQueensPt2\eightQueensPt2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\kbrown17\desktop\eightqueenspt2\eightqueenspt2\source.cpp(27): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kbrown17\desktop\eightqueenspt2\eightqueenspt2\source.cpp(74): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kbrown17\desktop\eightqueenspt2\eightqueenspt2\source.cpp(94): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kbrown17\desktop\eightqueenspt2\eightqueenspt2\source.cpp(89): warning C4715: 'PlaceQueen': not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kbrown17\Desktop\EightQueensPt2\Debug\eightQueensPt2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\kbrown17\Desktop\EightQueensPt2\Debug\eightQueensPt2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kbrown17\Desktop\EightQueensPt2\Debug\eightQueensPt2.lib" /MACHINE:X86 Debug\Source.obj
+         eightQueensPt2.vcxproj -> C:\Users\kbrown17\Desktop\EightQueensPt2\Debug\eightQueensPt2.exe
+     1>Done Building Project "C:\Users\kbrown17\Desktop\EightQueensPt2\eightQueensPt2\eightQueensPt2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.67
