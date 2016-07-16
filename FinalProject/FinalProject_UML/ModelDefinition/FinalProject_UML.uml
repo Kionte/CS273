@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a79c9181-4c4e-4952-967f-d1c7438ec45f"
+  name="FinalProject_UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="8de445a9-c0ca-4691-b5c9-ff6d44782088"
+        name="Care Giver"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="c62b4726-95b1-4cc5-8ef4-f814030797ca"
+            name="int treatmentTime"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="16679ac3-18d9-40c9-8e47-448b52d44551"
+            name="string serName"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="1b2d8478-3f43-49e7-8933-f8c0891dc209"
+            name="Hospital *SacredHeart"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4d2decfa-99d3-40f5-ade5-486a4f8fe16d"
+            name="virtual int getTreatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d715a34b-51b0-4855-b3fa-3577c70a88a8"
+            name="virtual void setTreatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cd80a100-8afd-4fb3-ba70-925cf8f9ecf5"
+            name="CareGiver"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0fddab51-7f29-4533-8117-6ee01d0e6134"
+        name="Doctor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="977631e6-dfb8-436e-b0b8-8261b7a403d9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="8de445a9-c0ca-4691-b5c9-ff6d44782088"
+              LastKnownName="Care Giver"
+              LastKnownLocation="FinalProject_UML.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="fb935325-c511-4077-8e5e-cb84c11e4132"
+            isDerived="false"
+            sourceEndRoleName="Doctor"
+            targetEndRoleName="Patient"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="38acf74f-25b1-464c-bede-f94b1d8d5f2a"
+              LastKnownName="Patient"
+              LastKnownLocation="FinalProject_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="86838dca-517e-40b4-b4fe-a4a640bfcbaa"
+                  name="Doctor"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7c695a18-05b5-41dc-b4b5-1e4be6f4a346"
+                  name="Patient"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="7b273f71-3eff-4589-b46c-0a87cf0e7e83"
+            name="void setTreatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5dd4acbb-0cf6-442b-90f4-ef00cff66b25"
+            name="int getTreatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d36c061f-91b0-4f12-9672-d33da1a365da"
+            name="Doctor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="feea992e-d341-41d5-83f3-e0d30d299e4e"
+                  name=")"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="b61e46a4-7a73-4633-8505-e2c40b4d8b99"
+                      LastKnownName="CareGiver("
+                      LastKnownLocation="FinalProject_UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b4a4074f-5a7c-42ce-818f-ab6b291cfd92"
+        name="Nurse"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="3005ec70-8146-4cec-a93a-af43c56fc7cf"
+            isSubstitutable="false">
+            <classMoniker
+              Id="8de445a9-c0ca-4691-b5c9-ff6d44782088"
+              LastKnownName="Care Giver"
+              LastKnownLocation="FinalProject_UML.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="efa6d57a-3ecb-46ca-968a-e9f087503f8d"
+            isDerived="false"
+            sourceEndRoleName="Nurse"
+            targetEndRoleName="Patient"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="38acf74f-25b1-464c-bede-f94b1d8d5f2a"
+              LastKnownName="Patient"
+              LastKnownLocation="FinalProject_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="65318b4c-17d9-4df4-adf0-edea0262937c"
+                  name="Nurse"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e9148617-cba1-4f8c-a04e-022c3a97bff6"
+                  name="Patient"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="e18a82c2-1eea-427b-b417-89677a12578f"
+            name="void setTreatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c4fadf4f-2559-4ab3-958a-57368413ac41"
+            name="int getTreatmentTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ed444484-d712-46c5-a237-dfd32ffdea0c"
+            name="Nurse"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7db69b6d-f861-4196-baf9-0552ab24cde2"
+                  name=")"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="b61e46a4-7a73-4633-8505-e2c40b4d8b99"
+                      LastKnownName="CareGiver("
+                      LastKnownLocation="FinalProject_UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="74ea9980-07a5-42e0-84c7-1d477958ab58"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="50a63062-e5c4-428a-9d9a-ebe71ed6dda9"
+        name="Random"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="862c7887-a5fd-430a-affc-b9dd4dee422c"
+            name="Random"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9270c81f-fcc1-4f4f-9f87-319009bbb2a0"
+            name="nextInt"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="72020446-d1b9-4c2d-a05a-5c5300c5119b"
+                  name="int n"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fdfe5314-b327-4a46-b42e-9ca562fcc62f"
+        name="Hospital"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="4a25c99d-4e50-47a6-9420-73b6639a4254"
+            isDerived="false"
+            sourceEndRoleName="Hospital"
+            targetEndRoleName="Care Givers"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8de445a9-c0ca-4691-b5c9-ff6d44782088"
+              LastKnownName="Care Giver"
+              LastKnownLocation="FinalProject_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7f374780-d04d-4513-8814-247fa28b079d"
+                  name="Hospital"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c100eb38-2dcb-40be-abf5-526e0c7ea5d9"
+                  name="Care Givers"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="ed2f228e-48b6-4f2e-b932-045e1a5f5fff"
+            name="int numOfDoctors"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="419e9553-4c88-461d-b565-4d197e0c094a"
+            name="int numOfNurses"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="71470346-c2f6-421e-9d6d-61d677674342"
+            name="int numOfPatients"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="0bb0662f-3ed1-4903-9840-08d483068fdb"
+            name="int timeOfSimulation"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="34e64423-0963-479b-b424-32467093e105"
+            name="int clock"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a1184daa-9dec-4d9a-81f9-4eb38ce4e6ae"
+            name="int getNumOfDoctors"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a8d012d3-b641-483c-b62d-191949b145bb"
+            name="int getNumOfNurses"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fe85f5db-a619-4243-adb1-38be5fc81c7c"
+            name="int getNumOfPatients"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4fd51e68-9e6e-4c59-9b36-7d842bd0524a"
+            name="void setNumOfPatients"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7a297390-7914-4ef2-ba12-50d4b63e728b"
+                  name="int num"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="63fb09e2-c5a4-47a1-9e01-687228ef5723"
+            name="void setNumOfNurses"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d4ecae94-6d7f-4dd6-baf0-85b3b7de093d"
+                  name="int num"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5867b3db-df73-4d56-9d08-f200fc02b2d3"
+            name="void setNumOfDoctors"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a15a89ca-5ce2-4816-84c1-c551d9fcd41f"
+                  name="int num"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2be02e3a-136f-4c34-bddc-af8b705a35b6"
+            name="void enterData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9b23caf9-5622-4766-b761-9daac0e7a035"
+            name="void runSacredHeart"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ff40467b-9c3f-4873-9ad4-1bdebbe25c51"
+            name="void showStats"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d35e2003-f8a0-4666-aebb-cef7a2c28de7"
+            name="Hospital"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="38acf74f-25b1-464c-bede-f94b1d8d5f2a"
+        name="Patient"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="db845dd9-5753-4191-89fa-c4d41062ec18"
+            isDerived="false"
+            sourceEndRoleName="Patient"
+            targetEndRoleName="Patient Records"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="dc29158f-2210-4c63-9c86-8426cf09664e"
+              LastKnownName="Patient Records"
+              LastKnownLocation="FinalProject_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e40fb7b2-8b60-4e5e-a3b3-70e4d0399b43"
+                  name="Patient"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="799c20b1-5a39-4b1c-9644-b29bf4ec00c8"
+                  name="Patient Records"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="2f1a21b5-7120-4ef9-babb-3c73d1d0f1ec"
+            name="int  illnessLevel"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4e9a4bbc-a5b1-4ba1-a4b8-df0843b09d95"
+            name="string firstName"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="64c96dfe-7787-4724-8920-dbd9e2e06042"
+            name="string serName"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="53e25d48-92f3-4256-a49a-0323b2a3c5a1"
+            name="PatientRecords * records"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f9f32c3a-019a-4a50-8975-5260563fb838"
+            name="int getNumOfVisits"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dc29158f-2210-4c63-9c86-8426cf09664e"
+        name="Patient Records"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="07d1e0e9-c02e-497a-a6da-052e3c9c99e9"
+            name="vector&lt;int&gt; recordsVector"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b61e46a4-7a73-4633-8505-e2c40b4d8b99"
+        name="CareGiver(" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
