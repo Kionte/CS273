@@ -142,6 +142,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AllPatients.h" />
+    <ClInclude Include="CareGiver.h" />
+    <ClInclude Include="Doctor.h" />
+    <ClInclude Include="EmergencyRoom.h" />
+    <ClInclude Include="Nurse.h" />
+    <ClInclude Include="Patient.h" />
+    <ClInclude Include="PatientRecords.h" />
+    <ClInclude Include="Random.h" />
+    <ClInclude Include="ReadInt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ReadInt.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

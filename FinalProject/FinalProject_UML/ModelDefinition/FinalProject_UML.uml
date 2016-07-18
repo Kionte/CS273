@@ -52,7 +52,7 @@
             isComposite="false" />
           <property
             Id="1b2d8478-3f43-49e7-8933-f8c0891dc209"
-            name="Hospital *SacredHeart"
+            name="EmergencyRoom *SacredHeart"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -345,7 +345,7 @@
     <packageHasNamedElement>
       <class
         Id="fdfe5314-b327-4a46-b42e-9ca562fcc62f"
-        name="Hospital"
+        name="Emergency Room"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -557,7 +557,7 @@
             isQuery="false" />
           <operation
             Id="d35e2003-f8a0-4666-aebb-cef7a2c28de7"
-            name="Hospital"
+            name="emergencyRoom"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -662,11 +662,54 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="48028a2d-7a25-4f3c-bbde-a460ba0ce546"
+            name="int numOfVisits"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="f9f32c3a-019a-4a50-8975-5260563fb838"
             name="int getNumOfVisits"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a528647d-f697-4bda-8238-69f66348671c"
+            name="patient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="03b6745b-ceaa-45c3-8ea4-e63949a03697"
+            name="int getNumOfVisits"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5b640c0b-50c1-4317-9f70-82f57d90b086"
+            name="void setNumOfVisits"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4ac78644-8876-45a3-a4ea-fd1440e358f5"
+            name="void getnumOfVisits"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -695,6 +738,16 @@
             aggregation="None"
             isComposite="false" />
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f7dc6202-621b-4ba8-b009-25b67221bdbb"
+            name="patientRecords"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>

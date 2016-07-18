@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="354e073c-e562-4b76-9e9f-4b3b1a1d69b4" name="UMLClassDiagram1" linkedPackageId="08d37410-fb93-43c6-af87-f19923dc5c4b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="96e76979-9a13-4a70-853c-82309b737113">
-      <profileInstance Id="de7f0911-aaba-4639-9ea6-088bb613e942" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="38246c40-9953-4ccd-983d-217a97dadeef">
-      <profileInstance Id="afb30203-375b-4a4e-9547-e650ac29b795" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="d9d8431a-9df1-4c0d-8c3d-9e505444e33f" name="Care Giver" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -25,7 +11,7 @@
           <property Id="9f22da5b-8c99-4c0e-9fbe-ffddcb8ce5c4" name="string serName" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="16679ac3-18d9-40c9-8e47-448b52d44551" />
           </property>
-          <property Id="0cf6a192-236b-494f-99ef-57bdc3148ee2" name="Hospital *SacredHeart" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="0cf6a192-236b-494f-99ef-57bdc3148ee2" name="EmergencyRoom *SacredHeart" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="1b2d8478-3f43-49e7-8933-f8c0891dc209" />
           </property>
         </ownedAttributesInternal>
@@ -163,7 +149,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="4aba5864-d1e2-4eb2-8214-55557ee81ca1" name="Hospital" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="4aba5864-d1e2-4eb2-8214-55557ee81ca1" name="Emergency Room" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="fdfe5314-b327-4a46-b42e-9ca562fcc62f" />
         <targetEnds>
           <association Id="bac3be03-a7c4-42c9-87ab-9fec41a53c1b" isDerived="false" sourceEndRoleName="Hospital" targetEndRoleName="Care Givers" isLeaf="false" isAbstract="false">
@@ -249,7 +235,7 @@
           <operation Id="1831ca39-078a-432d-857f-fe3661a5852f" name="void showStats" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="ff40467b-9c3f-4873-9ad4-1bdebbe25c51" />
           </operation>
-          <operation Id="1e92be3d-cbb6-4675-8087-d78982725218" name="Hospital" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="1e92be3d-cbb6-4675-8087-d78982725218" name="emergencyRoom" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="d35e2003-f8a0-4666-aebb-cef7a2c28de7" />
           </operation>
         </ownedOperationsInternal>
@@ -289,10 +275,25 @@
           <property Id="5550bc1d-0b49-49c0-8eb9-3cb449b075b6" name="PatientRecords * records" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="53e25d48-92f3-4256-a49a-0323b2a3c5a1" />
           </property>
+          <property Id="5f34ee0c-52bf-4b9e-be0a-f8687756c8ca" name="int numOfVisits" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="48028a2d-7a25-4f3c-bbde-a460ba0ce546" />
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="4b1e860e-cfd5-4ef1-b833-8edf556c5f76" name="int getNumOfVisits" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f9f32c3a-019a-4a50-8975-5260563fb838" />
+          </operation>
+          <operation Id="4423477e-4576-4c0d-aee6-b474cc4b81ac" name="patient" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a528647d-f697-4bda-8238-69f66348671c" />
+          </operation>
+          <operation Id="f605f810-003a-4fa6-843c-ba2bfde4fc58" name="int getNumOfVisits" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="03b6745b-ceaa-45c3-8ea4-e63949a03697" />
+          </operation>
+          <operation Id="6bc955d8-4ec7-45ab-bead-35b6e34e7503" name="void setNumOfVisits" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5b640c0b-50c1-4317-9f70-82f57d90b086" />
+          </operation>
+          <operation Id="ef8569fe-68ab-4779-a6a7-9eefd8dd8637" name="void getnumOfVisits" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4ac78644-8876-45a3-a4ea-fd1440e358f5" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -305,6 +306,11 @@
             <elementDefinition Id="07d1e0e9-c02e-497a-a6da-052e3c9c99e9" />
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="90d4345b-e72b-48b3-bc91-a1b306aaff9b" name="patientRecords" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f7dc6202-621b-4ba8-b009-25b67221bdbb" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -315,5 +321,19 @@
   </packagedElements>
   <package Id="08d37410-fb93-43c6-af87-f19923dc5c4b" name="FinalProject_UML">
     <elementDefinition Id="a79c9181-4c4e-4952-967f-d1c7438ec45f" />
+    <profileInstances>
+      <packageHasProfileInstances Id="96e76979-9a13-4a70-853c-82309b737113">
+        <profileInstance Id="de7f0911-aaba-4639-9ea6-088bb613e942" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="38246c40-9953-4ccd-983d-217a97dadeef">
+        <profileInstance Id="afb30203-375b-4a4e-9547-e650ac29b795" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
