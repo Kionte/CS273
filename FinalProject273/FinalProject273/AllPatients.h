@@ -12,6 +12,7 @@ class AllPatients {
 private:
 	std::vector<std::string> FNallPatientsVector;
 	std::vector<std::string> SNallPatientsVector;
+	std::string firstName;
 public:
 	void addPeopleToVector() {
 		std::ifstream firstName("residents_of_273ville.txt");
@@ -29,6 +30,7 @@ public:
 			while (std::getline(firstName, line)) {
 				FNallPatientsVector.push_back(line);
 			//	std::cout << FNallPatientsVector[num];
+		//		std::cout << "\n\n" << FNallPatientsVector.size();
 				num++;
 			}
 			num = 0;
@@ -42,14 +44,16 @@ public:
 
 	}
 	AllPatients() {} // no arg constructor
-	std::string getFirstName(int num) {
-		
-		return FNallPatientsVector[num];
+
+	std::vector<std::string> getVector() {
+		return FNallPatientsVector;
 	}
-	std::string getSername(int num) {
-		return SNallPatientsVector[num];
+	std::vector<std::string> getSNVector() {
+		return SNallPatientsVector;
 	}
-		
+
+	friend class EmergencyRoom;
 };
+
 
 #endif // !ALLPATIENTS_H_

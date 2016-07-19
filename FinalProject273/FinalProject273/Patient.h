@@ -20,15 +20,15 @@ protected:
 	int numOfVisits;
 	int clock;
 public:
-	Patient(int clock, std::string firstName, std::string serName, int illnessLevel) {
-		numOfVisits = 0;
+	Patient() {}
+	Patient(int clock, std::string firstName, std::string serName, int illnessLevel) 
+		{numOfVisits = 0;
 		this->clock = clock;
 		this->firstName = firstName;
 		this->serName = serName;
 		this->illnessLevel = illnessLevel;
-		
-	}
-	Patient() {}
+		}
+	
 	int setIllnessLevel() { 
 	this->illnessLevel = random.randomIllnessLevel();
 	numOfVisits++;
@@ -37,6 +37,8 @@ public:
 	int getIllnessLevel() { return illnessLevel; }
 	int getnumOfVisits() { return numOfVisits; }
 	
+	std::string getFirstName() { return firstName; }
+	std::string getSeranme() { return serName; }
 
 };
 

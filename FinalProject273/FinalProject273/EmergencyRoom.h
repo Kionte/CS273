@@ -18,11 +18,16 @@ private:
 	int clock;
 	int numOfDoctors;
 	int numOfNurses;
-	int numOfPatients;
+	double numOfPatients;
 	int timeOfSimulation;
 
-	WaitingRoomQueue * waitingRoomQueue;
-	DischargeQueue * dischargeQueue;
+	WaitingRoomQueue *waitingRoomQueue;
+	DischargeQueue *dischargeQueue;
+	AllPatients * allPatients;
+	//std::vector<std::string> FNallPatientsVector;
+
+	//std::vector<std::string> FNallPatientVector;
+
 public:
 	EmergencyRoom() {
 		clock = 0;
@@ -30,7 +35,11 @@ public:
 		numOfDoctors = -1;
 		numOfNurses = -1;
 		numOfPatients = -1;
+		waitingRoomQueue = new WaitingRoomQueue();
+		dischargeQueue = new DischargeQueue();
+		allPatients = new AllPatients();
 	}
+
 
 	int getNumOfDoctors() { return numOfDoctors; }
 	int getNumOfnurses() { return numOfNurses; }
@@ -40,10 +49,21 @@ public:
 	void setNumOfPatients(int numOfPatients) { this->numOfPatients = numOfPatients; }
 	
 	void enterData() {
+		allPatients->addPeopleToVector();
+
 		std::cout << "Hello my name is Dr. Itor, Jan Itor. I am the chief of medicine of Sacred Heart. Please answer these questions below...\n\n";
 		numOfDoctors = read_int("Enter Number of Doctors: ", 0, 100);
-		numOfNurses = read_int("Enter Number of Nurses : ",0,100); 
+		numOfNurses = read_int("Enter Number of Nurses : ", 0, 100);
 		numOfPatients = read_int("Enter Number of Patients arriving per hour: ", 0, 60);
+		double numOfPatientsPerHour = numOfPatients / 60;
+		waitingRoomQueue->setNumOfPatientsPerHour(numOfPatientsPerHour);
+	//	std::cout<< "-------------------------------------------"<< waitingRoomQueue->getP() << "\n";
+		//break;
+		waitingRoomQueue->setDischargeQueue(dischargeQueue);
+		waitingRoomQueue->setVector(allPatients->getVector());
+		waitingRoomQueue->setSNVector(allPatients->getSNVector());
+//		allPatients->setVector(allPatients->getVector());
+		
 	}
 	void runSacredHeart() {
 		for (clock = 0; clock < timeOfSimulation; clock++) {
@@ -75,7 +95,7 @@ public:
 		choice = read_int("Pick one of the above options: ", 1, 2);
 		switch (choice)
 		{
-		case 1: listtreatedPatients();
+		case 1: listTreatedPatients();
 			statsMenu();
 			break;
 		case 2: findPatientrecords();
