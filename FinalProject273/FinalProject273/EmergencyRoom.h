@@ -11,6 +11,7 @@
 #include "ReadInt.h"
 #include "WaitingRoomQueue.h"
 #include "DischargeQueue.h"
+#include "TreatmentQueue.h"
 
 class EmergencyRoom {
 
@@ -22,7 +23,9 @@ private:
 	int timeOfSimulation;
 
 	WaitingRoomQueue *waitingRoomQueue;
+	TreatmentQueue *treatmentQueue;
 	DischargeQueue *dischargeQueue;
+
 	AllPatients * allPatients;
 	//std::vector<std::string> FNallPatientsVector;
 
@@ -38,6 +41,7 @@ public:
 		waitingRoomQueue = new WaitingRoomQueue();
 		dischargeQueue = new DischargeQueue();
 		allPatients = new AllPatients();
+		treatmentQueue = new TreatmentQueue();
 	}
 
 

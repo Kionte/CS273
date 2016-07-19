@@ -5,7 +5,7 @@
 #include "Patient.h"
 #include "EmergencyRoom.h"
 #include "AllPatients.h"
-#include "DischargeQueue.h"
+
 class WaitingRoomQueue {
 
 private:
@@ -15,27 +15,24 @@ private:
 	std::vector<std::string> SNallPatientsVector;
 
 	double numOfPatients;
-	Random r;
+	Random r = 0;
 	AllPatients ap;
 	Patient p;
-
+	int num;
 public:
 	WaitingRoomQueue() { }
 	void setNumOfPatientsPerHour(double numOfPatients) {
 		this->numOfPatients = numOfPatients;
 	}
 	void addToQueue(int clock) {
-
+		
 		//std::cout << "ndouble:  " << r.nextDouble() << "\n\n patients" << numOfPatients << std::endl;
 		if (r.nextDouble() < numOfPatients) {
-			//Patient pl;
-			int num = rand() % 200 +1;
+//---------fixme	
+			num = rand() % 200;
 
-			waitingRoomQueue.push(new Patient(clock, getFirstName(num), getSername(num),p.setIllnessLevel() )); // making a patient with 
-			//std::cout << waitingRoomQueue.top();
-		//	std::cout << FNallPatientsVector[num] << "\n";
+			waitingRoomQueue.push(new Patient(clock, getFirstName(num), getSername(num),p.setIllnessLevel() )); 
 		}
-		std::cout << waitingRoomQueue.size() << "\n";
 	}
 	void setDischargeQueue(DischargeQueue*dischargeQueue) {
 
@@ -56,7 +53,7 @@ public:
 	double getP() {
 		return numOfPatients;
 	}
-	friend class DischargeQueue;
+	friend class TreatmentQueue;
 };
 
 #endif

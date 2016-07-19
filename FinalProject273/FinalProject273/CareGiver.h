@@ -3,4 +3,14 @@
 
 #include "EmergencyRoom.h"
 
+class CareGiver {
+
+private:
+
+public:
+	CareGiver() {
+
+	}
+
+};
 #endif

@@ -152,6 +152,7 @@
     <ClInclude Include="PatientRecords.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="ReadInt.h" />
+    <ClInclude Include="TreatmentQueue.h" />
     <ClInclude Include="WaitingRoomQueue.h" />
   </ItemGroup>
   <ItemGroup>

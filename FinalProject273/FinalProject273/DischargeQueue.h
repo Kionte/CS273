@@ -1,5 +1,10 @@
 #ifndef DISCHARGEQUEUE_H_
 #define DISCHARGEQUEUE_H_
+#include <queue>
+#include "Random.h"
+#include "Patient.h"
+#include "EmergencyRoom.h"
+#include "AllPatients.h"
 
 class DischargeQueue {
 
@@ -12,5 +17,6 @@ public:
 
 	}
 
+	friend class Treatment;
 };
 #endif // !DISCHARGEQUEUE_H_
