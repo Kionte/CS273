@@ -145,6 +145,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CareGiver.h" />
     <ClInclude Include="Citizens.h" />
     <ClInclude Include="DischargeRoomSet.h" />
     <ClInclude Include="EmergencyRoom.h" />

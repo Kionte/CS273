@@ -5,6 +5,7 @@
 #include "WaitingRoomSet.h"
 #include "DischargeRoomSet.h"
 #include "Random.h"
+#include "CareGiver.h"
 #include <queue>
 
 using std::queue;
@@ -15,6 +16,7 @@ private:
 	int totalTreatmentTime;
 	WaitingRoomSet*waitingRoomSet;
 	DischargeRoomSet*dischargeRoomSet;
+	CareGiver*careGiver;
 	queue<Patient*> doctorsQueue;
 	queue<Patient*> nursesQueue;
 public:
@@ -29,34 +31,36 @@ public:
 	}
 
 	void update(int clock) {
-		srand(time(0));
 		updateDoc(clock);
 		updateNur(clock);
 	}
 	void updateDoc(int clock)
-	{
-	
-		if (!doctorsQueue.empty())
+	{	
+		if (!doctorsQueue.empty()) // if the doctor is treating a patient(s)
 		{
-			Patient*patient = doctorsQueue.front();
+
+			Patient*patient = doctorsQueue.front(); // et the first patient 
 
 			if ((clock - patient->startTreatmentTime) > patient->totalTreatmentTime)
 			{
 				doctorsQueue.pop();
 				waitingRoomSet->numOfDoc++;
 				patient->dischargeTime = clock - patient->startTreatmentTime;
+				
 				dischargeRoomSet->doctorsQueue.push(patient);
 			}
 		}
-		if (doctorsQueue.empty())
+
+		if (doctorsQueue.empty() || waitingRoomSet->numOfDoc > 0)
 		{
-			if (!waitingRoomSet->doctorsQueue.empty())
+			while (waitingRoomSet->numOfDoc > 0 && (!waitingRoomSet->doctorsQueue.empty()))
 			{
+
 				Patient*patient = waitingRoomSet->doctorsQueue.front();
 				waitingRoomSet->doctorsQueue.pop();
 				waitingRoomSet->numOfDoc--;
 				patient->startTreatmentTime = clock;
-				double num = rand() % 20 + 1;
+
 				doctorsQueue.push(patient);
 			}
 		}
@@ -77,9 +81,9 @@ public:
 		}
 		if (nursesQueue.empty())
 		{
-			if (!waitingRoomSet-> nursesQueue.empty())
+			if (!waitingRoomSet->nursesQueue.empty())
 			{
-				Patient*patient = waitingRoomSet->doctorsQueue.front();
+				Patient*patient = waitingRoomSet->nursesQueue.front();
 				waitingRoomSet->nursesQueue.pop();
 				waitingRoomSet->numOfNur--;
 				patient->startTreatmentTime = clock;
@@ -87,6 +91,12 @@ public:
 				nursesQueue.push(patient);
 			}
 		}
+	}
+	void setDQ(queue<Patient*>doctorsQueue) {
+		this->doctorsQueue = doctorsQueue;
+	}
+	void setNQ(queue<Patient*>nursesQueue) {
+		this->nursesQueue = nursesQueue;
 	}
 
 

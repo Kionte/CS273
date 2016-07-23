@@ -14,25 +14,35 @@ struct Patient
 	std::string fName;
 	std::string sName;
 	Random random;
-	
+
 	Patient() {}
-	Patient(std::string fName, std::string sName, int clock)
+	Patient(std::string fName, std::string sName, int clock, int totalTreatmentTime)
 	{
-		arrivalTime = clock;
-		startTreatmentTime = -1;
-		totalTreatmentTime = -1;
-		dischargeTime = -1;
+		this->arrivalTime = clock;
+		this->startTreatmentTime = -1;
+		this->dischargeTime = -1;
 		this->fName = fName;
 		this->sName = sName;
+		this->totalTreatmentTime = totalTreatmentTime;
+
 	}
 
 	int getIllnessLevel() {
 		return 0;
 	}
-	 int setIllnessLevel() {
+	int setIllnessLevel() {
 		this->illnessLevel = random.randomIllnessLevel();
 		return illnessLevel;
+
 	}
+	int getTreatmentTime() {
+		return totalTreatmentTime;
+	}
+	void setTreatmentTime(int startTreatmentTime) {
+		this->startTreatmentTime = startTreatmentTime;
+
+	}
+
 };
 
 #endif

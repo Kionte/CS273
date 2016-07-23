@@ -44,5 +44,8 @@
     <ClInclude Include="EmergencyRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CareGiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
