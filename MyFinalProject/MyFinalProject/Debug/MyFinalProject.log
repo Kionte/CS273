@@ -1,13 +1,74 @@
-﻿Build started 7/22/2016 9:36:21 PM.
+﻿Build started 7/26/2016 9:25:45 PM.
      1>Project "C:\Users\kbrown17\Desktop\MyFinalProject\MyFinalProject\MyFinalProject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kbrown17\Desktop\MyFinalProject\Debug\MyFinalProject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\kbrown17\Desktop\MyFinalProject\Debug\MyFinalProject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kbrown17\Desktop\MyFinalProject\Debug\MyFinalProject.lib" /MACHINE:X86 Debug\Source.obj
-         MyFinalProject.vcxproj -> C:\Users\kbrown17\Desktop\MyFinalProject\Debug\MyFinalProject.exe
-     1>Done Building Project "C:\Users\kbrown17\Desktop\MyFinalProject\MyFinalProject\MyFinalProject.vcxproj" (Build target(s)).
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\iterator(14): error C2059: syntax error: 'namespace'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\iterator(14): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\iterator(352): error C2059: syntax error: 'namespace'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\iterator(352): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(15): error C2886: 'std::queue': symbol cannot be used in a member using-declaration
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\queue(19): note: see declaration of 'std::queue'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(16): error C2886: 'std::string': symbol cannot be used in a member using-declaration
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2603): note: see declaration of 'std::string'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(17): error C2886: 'std::vector': symbol cannot be used in a member using-declaration
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(19): error C2071: 'HospitalRecords::random': illegal storage class
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(38): error C2143: syntax error: missing ';' before '<'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(38): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(39): error C2079: 'HospitalRecords::WaitingRoomQueue::hospitalRecords' uses undefined struct 'HospitalRecords'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(40): error C3646: 'fName': unknown override specifier
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(41): error C3646: 'sname': unknown override specifier
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(41): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(42): error C2143: syntax error: missing ';' before '<'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(42): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(42): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(43): error C2143: syntax error: missing ';' before '<'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(43): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(44): error C2143: syntax error: missing ';' before '<'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(44): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(45): error C2143: syntax error: missing ';' before '<'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(45): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(101): error C3646: 'getFirstName': unknown override specifier
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(101): error C2059: syntax error: '('
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(101): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(104): error C3646: 'getSername': unknown override specifier
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(104): error C2059: syntax error: '('
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(104): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(107): error C2061: syntax error: identifier 'vector'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(110): error C2061: syntax error: identifier 'vector'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\dischargeroomqueue.h(7): error C2886: 'std::queue': symbol cannot be used in a member using-declaration
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\queue(19): note: see declaration of 'std::queue'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\dischargeroomqueue.h(16): error C2143: syntax error: missing ';' before '<'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\dischargeroomqueue.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\dischargeroomqueue.h(16): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\dischargeroomqueue.h(17): error C2143: syntax error: missing ';' before '<'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\dischargeroomqueue.h(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\dischargeroomqueue.h(17): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\treatmentroomqueue.h(11): error C2886: 'std::queue': symbol cannot be used in a member using-declaration
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\queue(19): note: see declaration of 'std::queue'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\treatmentroomqueue.h(20): error C2143: syntax error: missing ';' before '<'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\treatmentroomqueue.h(20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\treatmentroomqueue.h(20): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\treatmentroomqueue.h(21): error C2143: syntax error: missing ';' before '<'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\treatmentroomqueue.h(21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\treatmentroomqueue.h(21): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\treatmentroomqueue.h(92): error C2061: syntax error: identifier 'queue'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\treatmentroomqueue.h(95): error C2061: syntax error: identifier 'queue'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\emergencyroom.h(16): error C2086: 'Random HospitalRecords::random': redefinition
+         c:\users\kbrown17\desktop\myfinalproject\myfinalproject\waitingroomqueue.h(19): note: see declaration of 'HospitalRecords::random'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\emergencyroom.h(17): error C2886: 'std::cout': symbol cannot be used in a member using-declaration
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\iostream(27): note: see declaration of 'std::cout'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\emergencyroom.h(18): error C2886: 'std::cin': symbol cannot be used in a member using-declaration
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\iostream(26): note: see declaration of 'std::cin'
+     1>c:\users\kbrown17\desktop\myfinalproject\myfinalproject\hospitalrecords.h(9): fatal error C1075: the left brace '{' was unmatched at the end of the file
+     1>Done Building Project "C:\Users\kbrown17\Desktop\MyFinalProject\MyFinalProject\MyFinalProject.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.90
+Time Elapsed 00:00:00.35

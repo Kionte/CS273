@@ -29,22 +29,22 @@
     <ClInclude Include="HospitalRecords.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WaitingRoomSet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TreatmentRoomSet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Citizens.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DischargeRoomSet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EmergencyRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CareGiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitingRoomQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreatmentRoomQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DischargeRoomQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

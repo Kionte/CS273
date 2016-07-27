@@ -147,13 +147,13 @@
   <ItemGroup>
     <ClInclude Include="CareGiver.h" />
     <ClInclude Include="Citizens.h" />
-    <ClInclude Include="DischargeRoomSet.h" />
+    <ClInclude Include="DischargeRoomQueue.h" />
     <ClInclude Include="EmergencyRoom.h" />
     <ClInclude Include="HospitalRecords.h" />
     <ClInclude Include="Patient.h" />
     <ClInclude Include="Random.h" />
-    <ClInclude Include="TreatmentRoomSet.h" />
-    <ClInclude Include="WaitingRoomSet.h" />
+    <ClInclude Include="TreatmentRoomQueue.h" />
+    <ClInclude Include="WaitingRoomQueue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

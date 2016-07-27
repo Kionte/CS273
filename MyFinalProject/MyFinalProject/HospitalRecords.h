@@ -2,21 +2,25 @@
 #define HOSPITALRECORDS_H_
 
 #include <vector>
+#include <map>
+#include <iostream>
 #include "Patient.h"
-struct HospitalRecords // use multi maps for this 
+struct HospitalRecords // use  maps for this 
 {
-	std::vector<Patient*>records;
-	std::vector<int> illnessPerVisit;
+	std::string name;
+	int lvl;
+	std::map<std::string, std::vector<int>> hospitalRecords;
 	HospitalRecords() {}
-	HospitalRecords(std::vector<Patient*>records,std::vector<int> illnessPerVisit)
+	void addRecords(std::string name, std::vector<int> illnessPerVisit,int lvl) 
 	{
-		this->records = records;
-		this->illnessPerVisit = illnessPerVisit;
-	}
-	void addRecords(Patient* patient, int lvl) {
-		records.push_back(patient);
 		illnessPerVisit.push_back(lvl);
+		this->name = name;
+		hospitalRecords.insert(std::pair <std::string,std::vector<int>>(name,illnessPerVisit));
 	}
+	std::string getFName() {
+		return name;
+	}
+
 };
 
 #endif

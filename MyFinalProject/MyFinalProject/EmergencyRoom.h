@@ -6,9 +6,9 @@
 #include <stdexcept>
 #include <limits>
 #include <ios>
-#include "WaitingRoomSet.h"
-#include "TreatmentRoomSet.h"
-#include "DischargeRoomSet.h"
+#include "WaitingRoomQueue.h"
+#include "TreatmentRoomQueue.h"
+#include "DischargeRoomQueue.h"
 #include "Citizens.h"
 #include "Random.h"
 #include "CareGiver.h"
@@ -23,9 +23,9 @@ private:
 	int totalTime;
 	int clock;
 
-	WaitingRoomSet * waitingRoomSet;
-	TreatmentRoomSet * treatmentRoomSet;
-	DischargeRoomSet * dischargeRoomSet;
+	WaitingRoomQueue * waitingRoomQueue;
+	TreatmentRoomQueue * treatmentRoomQueue;
+	DischargeRoomQueue * dischargeRoomQueue;
 	Citizens * citizens;
 
 	int read_int(const std::string &prompt, int low, int high)
@@ -55,40 +55,43 @@ private:
 	}
 public:
 	EmergencyRoom() {
-		waitingRoomSet = new WaitingRoomSet();
-		treatmentRoomSet = new TreatmentRoomSet();
-		dischargeRoomSet = new DischargeRoomSet();
+		waitingRoomQueue = new WaitingRoomQueue();
+		treatmentRoomQueue = new TreatmentRoomQueue();
+		dischargeRoomQueue = new DischargeRoomQueue();
 		citizens = new Citizens();
 	}
 
 	void enterInfo() {
-		citizens->addPeopleToVector();
+		this->citizens->addPeopleToVector();
 		int patPerHour = read_int("enter rate: ", 1, 59);
 		double rate = patPerHour / 60;
 		int numOfDoc = read_int("enter doc: ", 1, 59);
 		int numOfNur = read_int("enter nur: ", 1, 59);
 
-		waitingRoomSet->setRate(patPerHour);
-		waitingRoomSet->setNur(numOfNur);
-		waitingRoomSet->setDoc(numOfDoc);
-		waitingRoomSet->setFirstName(citizens->getVector());
-		waitingRoomSet->setSerName(citizens->getSNVector());
-		treatmentRoomSet->setDischargeRoomSet(dischargeRoomSet);
-		treatmentRoomSet->setWaitingRoomSet(waitingRoomSet);
+		waitingRoomQueue->setRate(patPerHour);
+		waitingRoomQueue->setNur(numOfNur);
+		waitingRoomQueue->setDoc(numOfDoc);
+		waitingRoomQueue->setFirstName(citizens->getVector());
+		waitingRoomQueue->setSerName(citizens->getSNVector());
+		treatmentRoomQueue->setDischargeRoomQueue(dischargeRoomQueue);
+		treatmentRoomQueue->setWaitingRoomQueue(waitingRoomQueue);
 	}
 
 	void runSacredHeart() {
 		for (clock = 0; clock < 1000; clock++) {
-			waitingRoomSet->update(clock);
-			treatmentRoomSet->update(clock);
-			dischargeRoomSet->update(clock);
+			waitingRoomQueue->update(clock);
+			treatmentRoomQueue->update(clock);
+			dischargeRoomQueue->update(clock);
 		}
 	}
 	void listTreatedPatients() {
-
-		for (int i = 0; i < 9; i++) {
-
+		HospitalRecords hospitalRecords;
+		std::map<std::string, std::vector<int>>::iterator it;
+		
+		for (it = hospitalRecords.hospitalRecords.begin(); it != hospitalRecords.hospitalRecords.end(); it++) {
+			std::cout << it->first << "/n";
 		}
+
 		std::cout << "listP";
 	}
 	void findPatientrecords() {
@@ -123,10 +126,9 @@ public:
 	}
 	void showStats() {
 		std::cout << "Dr. Itor:  Thank you for helping us with the simulation everything went very well here are the results if you are interested...\n\n";
-		std::cout << "Patients Treated: " << dischargeRoomSet->getPatientsTreated();//->getPatientsTreted();
-		std::cout << "AVG visit time: " << dischargeRoomSet->getVisitTime() / dischargeRoomSet->getPatientsTreated();
-		std::cout << "\n\nAverage Time With Patients: ";
-		std::cout << "Please Select from the menu below...\n\n";
+		std::cout << "Patients Treated: " << dischargeRoomQueue->getPatientsTreated();//->getPatientsTreted();
+		std::cout << "AVG visit time: " << dischargeRoomQueue->getVisitTime() / dischargeRoomQueue->getPatientsTreated();
+		std::cout << "\n\nPlease Select from the menu below...\n\n";
 		statsMenu();
 	}
 };
