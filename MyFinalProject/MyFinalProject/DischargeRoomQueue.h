@@ -10,6 +10,7 @@ class DischargeRoomQueue
 {
 private:
 	int dischargeTime;
+	double tt = 0;
 	WaitingRoomQueue*waitingRoomQueue;
 	int visitTime;
 	int patientsTreated;
@@ -29,7 +30,7 @@ public:
 		return patientsTreated;
 	}
 	void setVisitTime(Patient* patient) {
-		visitTime += patient->dischargeTime - patient->arrivalTime;
+		visitTime += (patient->dischargeTime - patient->arrivalTime);
 	}
 	void setPT() {
 		patientsTreated++;
@@ -38,14 +39,15 @@ public:
 		if (!doctorsQueue.empty()) // if the doctor is still treating patients 
 		{
 			Patient*patient = doctorsQueue.front();  // get the first patient in the queue
-
+			//std::cout << patient->dischargeTime << "  ";
 			patient->dischargeTime = clock; // set one 
-			std::cout << doctorsQueue.size();
+			//std::cout << doctorsQueue.size();
 			doctorsQueue.pop(); // send the patient on their way 
 			setVisitTime(patient);
 			setPT();
-			//delete patient;
-
+	
+			delete patient;
+			
 		}
 		if (!nursesQueue.empty()) // if the doctor is still treating patients 
 		{
@@ -58,7 +60,7 @@ public:
 			setVisitTime(patient);
 			setPT();
 
-			//delete patient;
+			delete patient;
 
 		}
 	}

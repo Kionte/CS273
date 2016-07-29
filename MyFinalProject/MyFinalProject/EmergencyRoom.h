@@ -12,12 +12,12 @@
 #include "Citizens.h"
 #include "Random.h"
 #include "CareGiver.h"
+#include "HospitalRecords.h"
 
-Random random;
 using std::cout;
 using std::cin;
 
-class EmergencyRoom
+class EmergencyRoom : HospitalRecords
 {
 private:
 	int totalTime;
@@ -26,6 +26,7 @@ private:
 	WaitingRoomQueue * waitingRoomQueue;
 	TreatmentRoomQueue * treatmentRoomQueue;
 	DischargeRoomQueue * dischargeRoomQueue;
+	HospitalRecords * hospitalRecords;
 	Citizens * citizens;
 
 	int read_int(const std::string &prompt, int low, int high)
@@ -59,6 +60,7 @@ public:
 		treatmentRoomQueue = new TreatmentRoomQueue();
 		dischargeRoomQueue = new DischargeRoomQueue();
 		citizens = new Citizens();
+		hospitalRecords = new HospitalRecords();
 	}
 
 	void enterInfo() {
@@ -75,27 +77,21 @@ public:
 		waitingRoomQueue->setSerName(citizens->getSNVector());
 		treatmentRoomQueue->setDischargeRoomQueue(dischargeRoomQueue);
 		treatmentRoomQueue->setWaitingRoomQueue(waitingRoomQueue);
+		hospitalRecords->setHospitalRecords(hospitalRecords);
 	}
 
 	void runSacredHeart() {
-		for (clock = 0; clock < 1000; clock++) {
+		for (clock = 0; clock < 10080; clock++) {
 			waitingRoomQueue->update(clock);
 			treatmentRoomQueue->update(clock);
 			dischargeRoomQueue->update(clock);
 		}
 	}
 	void listTreatedPatients() {
-		HospitalRecords hospitalRecords;
-		std::map<std::string, std::vector<int>>::iterator it;
-		
-		for (it = hospitalRecords.hospitalRecords.begin(); it != hospitalRecords.hospitalRecords.end(); it++) {
-			std::cout << it->first << "/n";
-		}
-
-		std::cout << "listP";
+		listPatients();
 	}
+
 	void findPatientrecords() {
-		std::cout << "findP";
 	}
 	void endOfProgram() {
 		std::cout << "End Of Program...";

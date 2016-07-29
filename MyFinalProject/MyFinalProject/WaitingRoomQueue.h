@@ -12,15 +12,19 @@
 #include <vector>
 #include <iterator>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
 using std::queue;
 using std::string;
 using std::vector;
 
-extern Random random;
+
 
 class WaitingRoomQueue 
 {
 private:
+	int totalWait;
 	int loc;
 	int lvl;
 	int ttD;
@@ -44,9 +48,12 @@ private:
 	vector<string> FNallPatientsVector;
 	vector<string> SNallPatientsVector;
 
-	int totalWait;
+	
 
 public:
+
+	
+
 	WaitingRoomQueue() {
 		visitTime = 0;
 		patientsTreated = 0;
@@ -64,14 +71,19 @@ public:
 		}
 		return false;
 	}
+	
+	double next_double() {
+		return double(rand()) / RAND_MAX;
+	}
+	int next_int(int n) {
+		return int(next_double() * n);
+	}
+
 	void update(int clock)
 	{
-		//for (int i = 0; i < 10; i++) {
 		cast();
-
-		std::cout << random.next_double() << "  ";
 		//	_sleep(1000);
-		if (random.next_double() < rate)
+		if (next_double() < rate)
 		{
 			std::vector<int>temp;
 			if (numOfDoc > 0 || numOfNur > 0)
@@ -88,8 +100,8 @@ public:
 						hospitalRecords.addRecords(getFirstName(loc), temp, lvl);
 					else {
 						std::map<std::string, std::vector<int>>::iterator it;
-						it = hospitalRecords.hospitalRecords.find(getFirstName(loc));
-						if (it == hospitalRecords.hospitalRecords.end()) { hospitalRecords.hospitalRecords[getFirstName(loc)].push_back(lvl); }
+						it = hospitalRecords.hospitalRecordsMap.find(getFirstName(loc));
+						if (it == hospitalRecords.hospitalRecordsMap.end()) { hospitalRecords.hospitalRecordsMap[getFirstName(loc)].push_back(lvl); }
 
 					}
 				}

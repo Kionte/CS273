@@ -7,6 +7,7 @@
 #include "Random.h"
 #include "CareGiver.h"
 #include <queue>
+#include <iostream>
 
 using std::queue;
 class TreatmentRoomQueue {

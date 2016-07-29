@@ -13,7 +13,6 @@ struct Patient
 	int illnessLevel;
 	std::string fName;
 	std::string sName;
-	Random random;
 
 	Patient() {}
 	Patient(std::string fName, std::string sName, int clock, int totalTreatmentTime)
@@ -31,8 +30,20 @@ struct Patient
 		return 0;
 	}
 	int setIllnessLevel() {
-		this->illnessLevel = random.randomIllnessLevel();
-		return illnessLevel;
+		int range = rand() % 10 + 1;
+		int num = 0;
+
+		if (range > 9) {
+			num = rand() % 5 + 16;
+			return num;
+		}
+		else if (range > 7) {
+			num = rand() % 5 + 11;
+			return num;
+		}
+		else
+			num = rand() % 10 + 1;
+		return num;
 
 	}
 	int getTreatmentTime() {
@@ -42,7 +53,6 @@ struct Patient
 		this->startTreatmentTime = startTreatmentTime;
 
 	}
-
 };
 
 #endif
