@@ -1,4 +1,6 @@
-#ifndef DISCHARGEROOMSET_H_
+// Changed the name of this script so this script is no longer important 
+
+/*#ifndef DISCHARGEROOMSET_H_
 #define DISCHARGEROOMSET_H_
 #include <queue>
 #include "Patient.h"
@@ -67,3 +69,4 @@ public:
 	friend class TreatmentRoomSet;
 };
 #endif
+*/
