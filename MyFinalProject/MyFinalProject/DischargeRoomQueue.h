@@ -9,12 +9,12 @@ using std::queue;
 class DischargeRoomQueue
 {
 private:
-	int dischargeTime;
-	double tt = 0;
-	WaitingRoomQueue*waitingRoomQueue;
-	int visitTime;
-	int patientsTreated;
-	queue<Patient*> doctorsQueue;
+	int dischargeTime; // time the leave the queue
+	double tt = 0; // total time in queue
+	WaitingRoomQueue*waitingRoomQueue; // access to waiting room queue
+	int visitTime; // time in the dcharge queue
+	int patientsTreated; // num of patients treated increments by one every time a patient is treated
+	queue<Patient*> doctorsQueue; // stores the patients before they are discharged 
 	queue<Patient*> nursesQueue;
 
 public:
@@ -23,13 +23,13 @@ public:
 		visitTime = 0;
 		patientsTreated = 0;
 	}
-	int getVisitTime() {
+	int getVisitTime() { //-------------getters----------//
 		return visitTime;
 	}
 	int getPatientsTreated() {
 		return patientsTreated;
 	}
-	void setVisitTime(Patient* patient) {
+	void setVisitTime(Patient* patient) { //-------------setters-----------//
 		visitTime += (patient->dischargeTime - patient->arrivalTime);
 	}
 	void setPT() {
