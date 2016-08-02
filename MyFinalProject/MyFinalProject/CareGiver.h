@@ -8,15 +8,15 @@
 class CareGiver {
 
 private:
-	int numOfCareGiver;
-	int treatmentTime;
+	int numOfCareGiver; // user input 
+	int treatmentTime; // random num
 
 public:
 	CareGiver() {}
-	virtual int getNumOfCareGiver() = 0;
-	virtual void setNumOfCareGiver(int numOfCareGiver) = 0;
-	virtual int getTreatmentTime() = 0;
-	virtual int setTreatmentTime() = 0;
+	virtual int getNumOfCareGiver() = 0; // used to keep trck of cargivers
+	virtual void setNumOfCareGiver(int numOfCareGiver) = 0; // used after user input 
+	virtual int getTreatmentTime() = 0; // used to apply random value for treating patients
+	virtual int setTreatmentTime() = 0; // will return a random int iether between 1-10(nurse) or 1-20(doctor)
 
 };
 class Doctor : public CareGiver {
